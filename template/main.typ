@@ -187,7 +187,7 @@ Also, the PSF of the synthetic aperture at this time is shown in @fig:psf-zero-W
 The interference occurs due to the overlap of the projection images of the mirror satellites, and such a geometric pattern is generated.
 
 #figure(
-  image("./data/sim_normal_6/test18_gray_256_256.png", height: 125pt),//TODO: change image
+  image("./data/sim_normal_6/test18_gray_256_256.png", height: 125pt),
   caption: [True observation image @Chiriin],
 ) <fig:true-image>
 
@@ -195,12 +195,12 @@ The interference occurs due to the overlap of the projection images of the mirro
 #grid(
     columns: 2,
     [#figure(
-        image("./data/sim_normal_6/planar_zero_W.png"),//TODO: change image
+        image("./data/sim_normal_6/planar_zero_W.png"),
         caption: [Observation image of the extended source in the ideal state],
     ) <fig:planar-zero-W>
     ],
     [#figure(
-        image("./data/sim_normal_6/psf_zero_W.png"),//TODO: change image
+        image("./data/sim_normal_6/psf_zero_W.png"),
         caption: [PSF of the synthetic aperture at the time of observation @fig:planar-zero-W],
     ) <fig:psf-zero-W>
     ],
@@ -211,7 +211,7 @@ The interference occurs due to the overlap of the projection images of the mirro
 The wavefront aberration of the optical system in the initial state is shown in @fig:initial-W. It can be seen that the relative position and attitude of the mirror satellites deviate from the ideal position and attitude. Also, it can be seen that the maximum relative aberration is about 10 times the observation wavelength.
 
 #figure(
-  image("./data/sim_normal_6/initial_W.png", height: 150pt),//TODO: change image
+  image("./data/sim_normal_6/initial_W.png", height: 150pt),
   caption: [Initial wavefront aberration of the mirror satellites],
 ) <fig:initial-W>
 
@@ -221,12 +221,12 @@ Compared with @fig:planar-zero-W and @fig:psf-zero-W, the ground observation ima
 #grid(
     columns: 2,
     [#figure(
-        image("./data/sim_normal_6/planar_initial.png"),//TODO: change image
+        image("./data/sim_normal_6/planar_initial.png"),
         caption: [Initial observation image],
     ) <fig:planar-initial>
     ],
     [#figure(
-        image("./data/sim_normal_6/psf_initial.png"),//TODO: change image
+        image("./data/sim_normal_6/psf_initial.png"),
         caption: [PSF of the synthetic aperture at the time of observation @fig:planar-initial],
     ) <fig:psf-initial>
     ],
@@ -245,12 +245,12 @@ The ground observation image and the PSF of the synthetic aperture after the sup
 #grid(
     columns: 2,
     [#figure(
-        image("./data/sim_normal_6/planar_overlap.png"),//TODO: change image
+        image("./data/sim_normal_6/planar_overlap.png"),
         caption: [Observation image after superposition],
     ) <fig:planar-overlap>
     ],
     [#figure(
-        image("./data/sim_normal_6/psf_overlap.png"),//TODO: change image
+        image("./data/sim_normal_6/psf_overlap.png"),
         caption: [PSF of the synthetic aperture at the time of observation @fig:planar-overlap],
     ) <fig:psf-overlap>
     ],
@@ -270,12 +270,12 @@ The ground observation image and the PSF of the synthetic aperture after the int
 #grid(
     columns: 2,
     [#figure(
-        image("./data/sim_normal_6/planar_interfere.png"),//TODO: change image
+        image("./data/sim_normal_6/planar_interfere.png"),
         caption: [Observation image after interference position search],
     ) <fig:planar-interfere>
     ],
     [#figure(
-        image("./data/sim_normal_6/psf_interfere.png"),//TODO: change image
+        image("./data/sim_normal_6/psf_interfere.png"),
         caption: [PSF of the synthetic aperture at the time of observation @fig:planar-interfere],
     ) <fig:psf-interfere>
     ],
@@ -284,7 +284,7 @@ The ground observation image and the PSF of the synthetic aperture after the int
 This is the final phase, so the final wavefront aberration of the mirror satellites is shown in @fig:final-W.
 
 #figure(
-  image("./data/sim_normal_6/final_W.png", height: 150pt),//TODO: change image
+  image("./data/sim_normal_6/final_W.png", height: 150pt),
   caption: [Final wavefront aberration of the mirror satellites],
 ) <fig:final-W>
 
@@ -329,7 +329,7 @@ The maximum relative aberration $W$ before and after the application of the ESI 
 The initial maximum relative aberration is about $W = 20〜30$, but after the application of the ESI optimization method, it is suppressed to about $W = 1〜3$.
 On the other hand, there are cases where the maximum relative aberration after control is $W > 70$. This is an example of falling into a local optimum. By analyzing these examples, it was found that the initial maximum relative aberration was $W > 40$ in common. From this, it is considered that the current ESI optimization method may fall into a local optimum when the initial maximum relative aberration is $W > 40$. In order to expand the application range of the ESI optimization method, further improvement is needed to avoid local optimum.
 #figure(
-  image("./data/sim_normal_6/W_before_and_after.png"),//TODO: change image
+  image("./data/sim_normal_6/W_before_and_after.png"),
   caption: [Maximum relative aberration before and after the application of the ESI optimization method],
 ) <fig:W-before-and-after-ESI>
 
@@ -338,12 +338,12 @@ We perform a control experiment considering realistic effects such as imaging no
 == Experiment Conditions <sec:ExperimentCondition>
 The overview of the optical experiment system is shown in @fig:testbed-overall and @fig:testbed-around-mirror.
 #figure(
-  image("./img/exp/IMG_9656_lr.jpg"),//TODO: change image
+  image("./img/exp/IMG_9656_lr.jpg"),
   caption: [Overall view of the optical experiment system],
 ) <fig:testbed-overall>
 
 #figure(
-  image("./img/exp/IMG_9673_lr.jpg"),//TODO: change image
+  image("./img/exp/IMG_9673_lr.jpg"),
   caption: [Mirror satellite part of the optical experiment system],
 ) <fig:testbed-around-mirror>
 
@@ -380,13 +380,13 @@ Due to the limitations of the experiment system construction, the number of mirr
 
 In the optical experiment system, the test chart shown in @fig:testchart is used as the true observation image.
 #figure(
-  image("./data/exp/testchart.png", height: 150pt),//TODO: change image
+  image("./data/exp/testchart.png", height: 150pt),
   caption: [Test chart used in the optical experiment system @TestChart],
 ) <fig:testchart>
 
 The captured image at this time is shown in @fig:testbed-image-sample.
 #figure(
-  image("./data/exp/0deg_gain=1_start_0.png"),//TODO: change image
+  image("./data/exp/0deg_gain=1_start_0.png"),
   caption: [Example of captured image in the optical experiment system],
 ) <fig:testbed-image-sample>
 
@@ -395,19 +395,19 @@ The results of each phase after applying the ESI optimization method in the opti
 In particular, it can be confirmed that the projected images are actually superimposed in the superposition phase.
 This image is used as the control input, and the same image as in the numerical simulation is used.
 #figure(
-  image("./data/exp/result_all.png"),//TODO: change image
+  image("./data/exp/result_all.png"),
   caption: [Captured image at each step],
 ) <fig:testbed-result-all>
 
 To confirm that the interference has increased after the interference position search phase, the brightness value distribution of the center of the captured image before and after the interference position search is shown in @fig:testbed-center-before-ESI and @fig:testbed-center-after-ESI.
 This is the distribution of the part indicated by the red circle in the center of the image of the 4th image in @fig:testbed-result-all.
 #figure(
-  image("./data/exp/zoom_before.png"),//TODO: change image
+  image("./data/exp/zoom_before.png"),
   caption: [Brightness value distribution of the center of the captured image before control],
 ) <fig:testbed-center-before-ESI>
 
 #figure(
-  image("./data/exp/zoom_after.png"),//TODO: change image
+  image("./data/exp/zoom_after.png"),
   caption: [Brightness value distribution of the center of the captured image after control],
 ) <fig:testbed-center-after-ESI>
 
