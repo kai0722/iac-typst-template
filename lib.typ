@@ -21,10 +21,10 @@
       ],
       align(right)[
         Page
-        #counter(page).display(
+        #context(counter(page).display(
           "1 of 1",
           both: true,
-        )
+        ))
       ],
     ),
   )
@@ -61,9 +61,7 @@
       #let author_key = numbering("a", index)
       #set text(style: "italic")
       #let org = organizations.find(o => o.name == author.affiliation)
-      #super(author_key) #org.display#if author.email != none {
-        [, #text(style: "normal",underline[#link("mailto:" + author.email)])]
-      }
+      #super(author_key) #org.display
     ]).join(linebreak())
     #linebreak()
     #sym.ast.basic Corresponding Author
