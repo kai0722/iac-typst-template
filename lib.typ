@@ -44,11 +44,12 @@
 
   // Authors
   align(center)[
-    #authors.enumerate(start: 1).map(ia => [
-      #let (index, author) = ia
-      #let author_key = numbering("a", index)
+    #authors.map(author => [
+      #let pair = organizations.enumerate(start: 1).find(p => p.at(1).name == author.affiliation)
+      #let aff_index = pair.at(0)
+      #let aff_key = numbering("a", aff_index)
       #set text(weight: "bold")
-      #box[#author.name#super(author_key)#if author.at("corresponding", default: false) {
+      #box[#author.name#super(aff_key)#if author.at("corresponding", default: false) {
           sym.ast.basic
         }]]).join(", ")
     #v(1.3em, weak: true)
@@ -56,14 +57,16 @@
 
   // Author affiliations
   align(left)[
-    #authors.enumerate(start: 1).map(ia => [
-      #let (index, author) = ia
-      #let author_key = numbering("a", index)
-      #set text(style: "italic")
-      #let org = organizations.find(o => o.name == author.affiliation)
-      #super(author_key) #org.display
-    ]).join(linebreak())
-    #linebreak()
+    #for pair in organizations.enumerate(start: 1) [
+      #let idx = pair.at(0)
+      #let org = pair.at(1)
+      #if authors.any(a => a.affiliation == org.name) [
+        #let aff_key = numbering("a", idx)
+        #set text(style: "italic")
+        #super(aff_key) #org.display
+        #linebreak()
+      ]
+    ]
     #sym.ast.basic Corresponding Author
   ]
   v(1.3em, weak: true)
