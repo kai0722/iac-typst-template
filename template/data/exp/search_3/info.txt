@@ -1,0 +1,2 @@
+image path = 
+"C:\Users\nakam\Desktop\bachelor_thesis\matlab_simulator\32_sweep_stepping_motor\output\2023-11-10_17-49-04-767_good\c21\img\"

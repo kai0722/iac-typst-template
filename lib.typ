@@ -122,23 +122,20 @@
     v(-0.45 * measure(2 * a).width)
   }
 
-  // Figure show rule
+// Figure show rules
+  set figure.caption(separator: [. ])
+  show figure: it => align(center)[    
+    #v(0.65em)
+    #it
+    #v(0.65em)
+  ]
+
+// Image show rules
   show figure.where(kind: image): set figure(supplement: [Fig.])
-  show figure.where(kind: image): it => align(center)[
-    #v(0.65em)
-    #block(below: 0.65em)[#it.body]
-    #it.supplement #it.counter.display(it.numbering). #it.caption.body
-    #v(0.65em)
-  ]
 
-  // Table show rule
-  show figure.where(kind: table): it => align(center)[
-    #v(0.65em)
-    #it.supplement #it.counter.display(it.numbering). #it.caption.body
-    #block(above: 0.65em)[#it.body]
-    #v(0.65em)
-  ]
-
+  // Table show rules
+  show figure.where(kind: table): set figure.caption(position: top)
+  
   set table(stroke: (x, y) => (
     left: 0pt,
     right: 0pt,

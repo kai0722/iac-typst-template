@@ -4,7 +4,7 @@
 
 #show: project.with(
   paper-code: "IAC-25-B4.7.13",
-  title: "Ultra‑High‑Precision Control Using Extended‑Source Images for a Formation‑Flying Synthetic‑Aperture Telescope and Application to Telescope Pointing",
+  title: "Ultra‑High‑Precision Control Using Extended‑Source Images for a Formation‑Flying synthetic aperture Telescope and Application to Telescope Pointing",
   authors: (
     (
       name: "Kai Nakamura",
@@ -27,7 +27,7 @@
     ),
     (
       name: "ArkEdge Space Inc.",
-      display: "ArkEdge Space Inc., 3A, DOME ARIAKE HEADQUARTER 1-3-33 Ariake, Koto-ku, Tokyo, Japan",
+      display: "ArkEdge Space Inc., 3A, Dome Ariake Headquarter 1-3-33 Ariake, Koto-ku, Tokyo, Japan",
     )
   ),
   keywords: (
@@ -38,7 +38,7 @@
   ),
   header: [76#super[th] International Astronautical Congress (IAC), Sydney, Australia, 29 Sep–3 Oct 2025.\ Copyright #{sym.copyright}2025 by the International Astronautical Federation (IAF). All rights reserved.],
   abstract: [
-    The Formation‑Flying Synthetic Aperture Telescope concept targets high spatial and temporal resolution by coherently combining light from multiple microsatellites to form a large virtual aperture for applications such as disaster monitoring. A central challenge is controlling the relative positions and attitudes of the optical elements with sub‑wavelength accuracy, which is difficult because practical, high‑precision absolute ranging sensors for small satellites are not available. We propose and validate an **extended‑source image optimization** method that addresses this challenge by extending prior work based on stellar point‑spread functions to images of ground scenes—i.e., extended and potentially time‑varying sources. The key idea is to infer the degree of optical interference from statistical properties of the observed image, specifically the intensity standard deviation and the power spectral density, and to use these as feedback signals to actively control the relative positions and attitudes of the satellites’ optical units. The method is verified through numerical simulations and a ground‑based experimental testbed. The principal result is that wavelength‑level accuracy in relative position and attitude control can be achieved and maintained using only extended‑source images, thereby eliminating reliance on high‑precision absolute distance measurements. We further discuss applying the method to sequences of telescope‑pointing maneuvers required to change observation targets.
+    The Formation Flying Synthetic Aperture Telescope concept targets high spatial and temporal resolution by coherently combining light from multiple microsatellites to form a large virtual aperture for applications such as disaster monitoring. A central challenge is controlling the relative positions and attitudes of the optical elements with sub‑wavelength accuracy, which is difficult because practical, high‑precision absolute ranging sensors for small satellites are not available. We propose and validate an **extended‑source image optimization** method that addresses this challenge by extending prior work based on stellar point‑spread functions to images of ground scenes—i.e., extended and potentially time‑varying sources. The key idea is to infer the degree of optical interference from statistical properties of the observed image, specifically the intensity standard deviation and the power spectral density, and to use these as feedback signals to actively control the relative positions and attitudes of the satellites’ optical units. The method is verified through numerical simulations and a ground‑based experimental testbed. The principal result is that wavelength‑level accuracy in relative position and attitude control can be achieved and maintained using only extended‑source images, thereby eliminating reliance on high‑precision absolute distance measurements. We further discuss applying the method to sequences of telescope‑pointing maneuvers required to change observation targets.
   ],
 )
 
@@ -76,7 +76,7 @@
 = Introduction <chap:Introduction>
 == Background <sec:Background>
 Earth‑observation satellites provide valuable information for disaster monitoring by enabling simultaneous assessment of wide areas; therefore, both spatial resolution and temporal resolution (i.e., observation frequency) are critical @Nakasuka2018U.
-Low‑Earth‑orbit observations can achieve high spatial resolution; however, revisiting the same site frequently is difficult without a large constellation. In contrast, placing a satellite in geostationary orbit for “stationary remote sensing” enables high‑frequency observations but makes high spatial resolution more challenging than in low Earth orbit. To meet both requirements, we have proposed the FFSAT system (@fig:ffsat-concept-image), which uses formation flying. As one application, we are studying an Australian wildfire monitoring mission @Suzumoto2023D.
+Low‑Earth‑orbit observations can achieve high spatial resolution; however, revisiting the same site frequently is difficult without a large constellation. In contrast, placing a satellite in geostationary orbit for “stationary remote sensing” enables high‑frequency observations but makes high spatial resolution more challenging than in low Earth orbit. To meet both requirements, we have proposed the FFSAT system (@fig:ffsat-concept-image), which uses formation flying. As one application, we are studying an Australian wildfire monitoring mission.
 
 #figure(
   image("./img/satellite/FFSAT_en_rev_3_2_crop.png"),
@@ -104,7 +104,7 @@ As summarized in @tab:ffsat-object, the current FFSAT design achieves both high 
     [Piston Control Accuracy], [$delta z$], [nm], [400],
     [Tilt Control Accuracy], [$delta phi, delta theta$], [$upright(mu)$rad], [0.84],
   ),
-    caption: [FFSAT specifications @Suzumoto2023D],
+    caption: [FFSAT specifications],
 ) <tab:ffsat-object>
 
 In this study, we propose a method to maintain high spatial resolution by controlling the relative positions and attitudes of the optical system with wavelength‑scale precision using feedback from captured images in ground‑based observations of FFSAT. After validating the control law via numerical simulations, we conduct experiments with a laboratory testbed that incorporates sensor and actuator noise, which are difficult to model in purely numerical analyses.
@@ -114,25 +114,25 @@ In ground‑based observations with FFSAT, the central challenge during imaging 
 
 Accordingly, we focus on a control approach that reduces wavefront aberrations of several tens of wavelengths—introduced during ground‑based observation—to within two or three wavelengths. Specifically, we determine the relative position and attitude with respect to the mirror satellites by optimizing ground‑captured images, thereby achieving the required control precision and enabling truly high spatial resolution.
 
-== Structure <sec:Structure>
+== Structure of this paper <sec:Structure>
 In @chap:PriorResearch, we review prior studies and clarify open issues.
 In @chap:Method, we propose an in‑operation control law that uses features extracted from observed images to control the relative position and attitude of the optical system with respect to the mirror satellites to within observation‑wavelength precision.
 In @chap:Simulation, we validate the proposed control law through simulation.
 Finally, in @chap:Experiment, we verify the control law with an optical testbed that captures environmental disturbances difficult to reproduce in simulation.
 
 = Prior Research and Positioning of This Study <chap:PriorResearch>
-As prior work, we consider formation and maintenance control laws for FFSAT based on the PSF. A related study by Suzumoto et al. proposed a PSF‑optimization method (@Suzumoto2023D) in which initial formation and maintenance control are realized by optimizing the PSF obtained when imaging a star (a point source). Figure @fig:psf-sample shows PSFs before and after control, computed by the authors with reference to @Suzumoto2023D. This method is based on a “result‑consistency” concept: an optimal PSF implies an optimal relative position and attitude of the optical system with respect to the imaging satellite. As noted in @Suzumoto2023D, this approach is necessary because no miniaturized, wavelength‑scale absolute distance sensor suitable for small satellites currently exists; consequently, the optimal relative state must be inferred from observed images. That prior research demonstrated that, for point‑source observations, formation and maintenance control with wavelength‑scale precision can be achieved by optimizing the PSF.
+As prior work, we consider formation and maintenance control laws for FFSAT based on the PSF. A related study by Suzumoto et al. from our research group proposed a PSF‑optimization method in which initial formation and maintenance control are realized by optimizing the PSF obtained when imaging a star (a point source). Figure @fig:psf-sample shows PSFs before and after control, computed by the authors. This method is based on a “result‑consistency” concept: an optimal PSF implies an optimal relative position and attitude of the optical system with respect to the imaging satellite. As noted in @Suzumoto2023D, this approach is necessary because no miniaturized, wavelength‑scale absolute distance sensor suitable for small satellites currently exists; consequently, the optimal relative state must be inferred from observed images. That prior research demonstrated that, for point‑source observations, formation and maintenance control with wavelength‑scale precision can be achieved by optimizing the PSF.
 
 #figure(
   image("./img/sim/psf_image.png"),
-  caption: [PSF optimization before (left) and after (right) control @Suzumoto2023D],
+  caption: [PSF optimization before (left) and after (right) control],
 ) <fig:psf-sample>
 
 The open problem is summarized as follows. Prior research shows that wavelength‑scale formation control is achievable using images of point sources; however, in ground‑based observations the target is an extended source (the Earth’s surface). Although one can establish an ideal optical configuration in orbit by observing stars, the key question is whether, after redirecting the line of sight from a star to the Earth while preserving the wavelength‑scale relative state, we can re‑tune the relative position and attitude to the same precision by optimizing the captured extended‑source images. As with PSF optimization, an absolute distance sensor with the required precision is not available, so a result‑consistent, image‑based control approach is essential.
 
 = Method <chap:Method>
 == Overview <sec:Overview>
-We propose a line‑of‑sight control method for a synthetic‑aperture telescope based on **Extended‑Source Image (ESI) optimization**. ESI optimization enables in‑operation formation maintenance with observation‑wavelength precision by optimizing images of extended sources captured by the synthetic‑aperture telescope, without high‑precision absolute distance sensors.
+We propose a line‑of‑sight control method for a synthetic aperture telescope based on **Extended‑Source Image (ESI) optimization**. ESI optimization enables in‑operation formation maintenance with observation‑wavelength precision by optimizing images of extended sources captured by the synthetic aperture telescope, without high‑precision absolute distance sensors.
 
 The coordinate systems used in ESI optimization are shown in @fig:optical-coordinate.
 $bold(u) = (u,v)$ denotes image‑sensor coordinates, and $bold(x) = (x,y)$ denotes aperture coordinates.
@@ -143,7 +143,7 @@ $bold(u) = (u,v)$ denotes image‑sensor coordinates, and $bold(x) = (x,y)$ deno
 ) <fig:optical-coordinate>
 
 Observation image synthesis in the algorithm is performed by convolving the true scene with the PSF obtained from the optical pupil. The PSF calculation is given in @eq:psf-calculation and @eq:psf-calculation-P.
-When the relative position and attitude of mirror satellite $q$ are shifted by $bold(delta)_q$, the point‑source image (e.g., a star) is simulated, and the corresponding pixel intensities are computed. The wavefront aberration of the synthetic‑aperture system is computed from $bold(delta)_q$, and the point‑source PSF $s$ is
+When the relative position and attitude of mirror satellite $q$ are shifted by $bold(delta)_q$, the point‑source image (e.g., a star) is simulated, and the corresponding pixel intensities are computed. The wavefront aberration of the synthetic aperture system is computed from $bold(delta)_q$, and the point‑source PSF $s$ is
 
 #set math.equation(number-align: bottom)
 $
@@ -161,13 +161,13 @@ Below, we define the image features, describe the image‑feedback gradient meth
 == Features <sec:Feature>
 
 - *Image Standard Deviation*  
-  We use the standard deviation of pixel intensities as an evaluation function. Larger standard deviation indicates greater contrast and typically clearer images.
+  We use the standard deviation of pixel intensities as an evaluation function. A larger standard deviation indicates greater contrast and typically clearer images.
 
 - *Image Power Spectral Density (PSD)*  
   We evaluate spatial resolution through the PSD, defined as the squared magnitude of the 2‑D Fourier spectrum of the image. The PSD distribution reveals the image’s spatial‑frequency content.
 
-- *Wavefront Aberration of the Optical System*  
-  We track the wavefront aberration as a performance measure. Here it refers to aberration caused by deviations in the mirror satellites’ relative position and attitude from the ideal configuration, with the Z‑axis position being the dominant contributor. Smaller aberration indicates better optical performance.
+- *Wavefront Aberration of the Optical System*
+  We track the wavefront aberration as a performance measure. Here, it refers to aberration caused by deviations in the mirror satellites’ relative position and attitude from the ideal configuration, with the Z‑axis position being the dominant contributor. Asmaller aberration indicates better optical performance.
 
 == Extended Image‑Feedback Gradient Method <sec:Gradient>
 In PSF‑based optimization, the relative position and attitude of the mirror satellites are updated along the gradient of an image‑derived evaluation function (“image‑feedback gradient”). A simple hill‑climbing scheme can be slow for ESI alone. We therefore extend the method to handle multiple mirror satellites using gradient descent with a momentum term, yielding faster convergence than the conventional approach. We refer to this as the **extended image‑feedback gradient method**.
@@ -275,7 +275,7 @@ Compared with @fig:initial-W, the maximum relative aberration is reduced to a fe
 = Verification by Numerical Simulation <chap:Simulation>
 We assess the algorithm’s validity using Monte Carlo simulations.
 == Simulation Conditions <sec:Condition>
-Simulation conditions are listed in @tab:simulation-condition. FFSAT has different specifications for summer and winter; here we use the winter case.
+Simulation conditions are listed in @tab:simulation-condition. FFSAT has different specifications for summer and winter; here, we use the winter case.
 
 #figure(
   table(
@@ -306,7 +306,7 @@ Simulation conditions are listed in @tab:simulation-condition. FFSAT has differe
 ) <tab:simulation-condition>
 
 == Simulation Results <sec:SimulationResult>
-The maximum relative aberration $W$ before and after applying ESI optimization is shown in @fig:W-before-and-after-ESI. Initially, $W approx 20$–$30$ (in units of the wavelength), and after applying ESI it is suppressed to about $W approx 1$–$3$. In some trials, however, the post‑control aberration exceeds $W > 70$, indicating convergence to a local optimum. Analysis shows that these cases share large initial aberration ($W > 40$). Thus, the current ESI method may fall into local optima when the initial aberration is large; further improvements to enlarge the convergence basin are warranted.
+The maximum relative aberration $W$ before and after applying ESI optimization is shown in @fig:W-before-and-after-ESI. Initially, $W approx 20$–$30$ (in units of the wavelength), and after applying ESI optimization, it is suppressed to about $W approx 1$–$3$. In some trials, however, the post‑control aberration exceeds $W > 70$, indicating convergence to a local optimum. Analysis shows that these cases share large initial aberration ($W > 40$). Thus, the current ESI method may fall into local optima when the initial aberration is large; further improvements to enlarge the convergence basin are warranted.
 
 #figure(
   image("./data/sim_normal_6/W_before_and_after.png"),
@@ -328,7 +328,7 @@ An overview of the optical testbed is shown in @fig:testbed-overall and @fig:tes
   caption: [Mirror‑satellite section of the optical experiment system],
 ) <fig:testbed-around-mirror>
 
-The system specifications are summarized in @tab:experimant-condition. Due to construction constraints, the number of mirrors and other parameters differ from FFSAT, but they suffice to verify the effectiveness of ESI optimization.
+The system specifications are summarized in @tab:experiment-condition. Due to construction constraints, the number of mirrors and other parameters differ from FFSAT, but they suffice to verify the effectiveness of ESI optimization.
 
 #figure(
   table(
@@ -357,7 +357,7 @@ The system specifications are summarized in @tab:experimant-condition. Due to co
     table.hline()
   ),
     caption: [Experiment conditions],
-) <tab:experimant-condition>
+) <tab:experiment-condition>
 
 The test chart in @fig:testchart is used as the true observation image.
 
